@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Zap, Star, Trophy, Rocket } from 'lucide-react';
+import { Zap, Star, Trophy, Rocket, Link as LinkIcon } from 'lucide-react';
+import Link from 'next/link';
 
 export default function TapToEarn() {
   const [points, setPoints] = useState(0);
@@ -53,9 +54,7 @@ export default function TapToEarn() {
                     flex flex-col items-center justify-center p-4 space-y-6 
                     relative overflow-hidden">
       {/* Subtle Background Pattern */}
-      <div className="absolute inset-0 opacity-10 
-        bg-[radial-gradient(#a3bffa_1px,transparent_1px)] 
-        [background-size:16px_16px]"></div>
+      
 
       {/* Stats Container */}
       <div className="relative z-10 w-full max-w-md 
@@ -82,7 +81,7 @@ export default function TapToEarn() {
       <button 
         onClick={handleTap}
         disabled={energy === 0}
-        className={`relative w-64 h-64 rounded-full 
+        className={`relative w-44 h-44 rounded-full 
                     ${energy > 0 
                       ? 'bg-gradient-to-r from-blue-500 to-blue-700 hover:scale-105' 
                       : 'bg-gray-300 cursor-not-allowed'}
@@ -114,6 +113,22 @@ export default function TapToEarn() {
           ))}
         </div>
       </div>
+
+      {/* Referral Button */}
+      <Link href="/referral">
+        <div className="w-full max-w-md">
+          <button 
+            className="w-full bg-blue-600 text-white 
+                       py-4 rounded-xl flex items-center 
+                       justify-center space-x-2 
+                       hover:bg-blue-700 transition-colors 
+                       shadow-md hover:shadow-lg"
+          >
+            <LinkIcon className="w-4 h-4" />
+            <span className="font-bold">Invite Friends & Earn Rewards</span>
+          </button>
+        </div>
+      </Link>
     </div>
   );
 }
