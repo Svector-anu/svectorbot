@@ -6,8 +6,8 @@ export default function ReferralPage() {
   const [copied, setCopied] = useState(false);
   
   // Generate a unique referral code (you might want to generate this dynamically)
-  const referralCode = 'SVECTOR2024';
-  const referralLink = `https://yourapp.com/invite/${referralCode}`;
+  const referralCode = 'Svectorbot2024';
+  const referralLink = `https://svectorbot|web3nova.com/invite/${referralCode}`;
 
   const handleCopyLink = () => {
     navigator.clipboard.writeText(referralLink);
